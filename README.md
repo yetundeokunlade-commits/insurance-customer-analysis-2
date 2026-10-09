@@ -1,75 +1,104 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+# Insurance Customer Analysis
 
-Welcome,
+## Live Tableau Dashboard
 
-This is the Code Institute student template for the three Data Analytics capstone projects. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+Explore my interactive Tableau dashboard presenting findings from the Insurance Company Benchmark (COIL 2000) dataset.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+**[View the Interactive Dashboard](https://public.tableau.com/app/profile/yetunde.okunlade/viz/InsuranceCustomerAnalysis_17914587880850/InsuranceCustomerAnalysisDashboard)**
 
-If you are working on the first capstone project, you can also delete `.python-version`, `.slugignore`, `Procfile` and `setup.sh` as they are only required for later dashboard projects. 
+## Project Overview
 
-## How to use this repo
+This project analyses the Insurance Company Benchmark (COIL 2000) dataset to explore customer characteristics and investigate factors associated with caravan insurance ownership. Exploratory data analysis, statistical testing, and machine learning are used to identify patterns and develop findings that can support insurance customer analysis and business decision-making.
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+## Objectives
 
-1. Copy the URL of your repository to your clipboard.
+* Load and inspect the UCI Insurance Company Benchmark (COIL 2000) dataset.
+* Clean and prepare the data for analysis.
+* Explore customer characteristics and insurance product ownership.
+* Investigate factors associated with caravan insurance ownership.
+* Apply statistical analysis and an appropriate machine learning model.
+* Present findings and recommendations to support business decision-making.
 
-1. In VS Code, select **File** -> **Open Folder**.
+## Dataset and Data Source
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+The dataset used in this project is the **Insurance Company Benchmark (COIL 2000)** dataset, available through the UCI Machine Learning Repository.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open a new terminal.
+* **Dataset:** Insurance Company Benchmark (COIL 2000)
+* **Dataset ID:** 125
+* **Licence:** CC BY 4.0
+* **Dataset source:** [UCI Machine Learning Repository — Insurance Company Benchmark (COIL 2000)](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000)
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+The dataset was originally provided by Sentient Machine Research and is distributed through the UCI Machine Learning Repository.
 
-1. In VS Code, select **File** > **Open Folder** again.
+## Input Files
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+* `ticdata2000.txt` — the main dataset containing 5,822 records and 86 attributes.
+* `ticdatadescr.txt` — the dataset description and data dictionary.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate. You need to create your virtual environment, also called a venv, and then activate it whenever you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+## Project Methodology
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+The project follows these main stages:
 
-1. Choose **Venv** from the dropdown list.
+1. **Data preparation:** Loading, inspecting, and preparing the dataset for analysis.
+2. **Exploratory data analysis:** Examining customer characteristics and caravan insurance ownership patterns.
+3. **Statistical analysis:** Applying hypothesis tests to investigate associations between selected customer characteristics and caravan insurance ownership.
+4. **Machine learning:** Developing and evaluating a classification model to identify patterns associated with caravan insurance ownership.
+5. **Visualisation and reporting:** Preparing the analysis results for presentation in an interactive Tableau dashboard.
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+## Project Outputs
 
-1. **DO NOT** click the box next to `requirements.txt`; you need to complete additional steps before installing your dependencies. Click **OK**.
+* Cleaned and prepared data for analysis.
+* Exploratory data analysis and visualisations.
+* Statistical analysis and hypothesis-testing results.
+* Machine learning model and evaluation results.
+* Findings, conclusions, and business recommendations.
+* An interactive Tableau Public dashboard.
 
-1. You will see a `.venv` folder appear in the file explorer pane, indicating that the virtual environment has been created.
+## Key Findings
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+The analysis identified differences in caravan insurance ownership across some customer-characteristic groups. Statistical testing found significant associations for selected variables, including purchasing power, car ownership percentage group, and higher education percentage group.
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
+The logistic regression model achieved a ROC-AUC score of approximately 0.74. The results also highlighted the challenge of identifying caravan insurance customers because they represent a relatively small proportion of the dataset.
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
+These findings can inform further investigation of customer groups, but the observed associations do not establish causation.
 
- ```console
- pip3 install -r requirements.txt
- ```
+## Business Recommendations
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
+* Investigate customer groups that showed higher caravan insurance ownership rates.
+* Use the findings to support further customer segmentation and targeted marketing research.
+* Consider the class imbalance when evaluating models designed to identify potential caravan insurance customers.
+* Validate the findings using additional data and business knowledge before making marketing or customer-targeting decisions.
 
-1. Click the **Kernel** button, then choose **Python Environments**.
+## Limitations
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+* Caravan insurance ownership represents a small proportion of the dataset, creating a class-imbalance challenge for machine learning.
+* The dataset does not contain a unique customer identifier.
+* Identical records were reviewed and retained because they may represent different customers with the same recorded characteristics.
+* The dataset contains coded customer characteristics, so the meaning of individual categories depends on the accompanying data dictionary.
+* Statistical associations and model predictions should not be interpreted as evidence of causation.
 
-```console
-! python --version
-```
+## Tools and Technologies
 
-## Deployment Reminders
+* Python
+* Pandas and NumPy
+* Matplotlib and Seaborn
+* Scikit-learn
+* Jupyter Notebook
+* Tableau Desktop and Tableau Public
+* Git and GitHub
 
-* The `.python-version`, `.slugignore`, `Procfile` and `setup.sh` files are necessary only if you are deploying a Streamlit app to Heroku as part of your submission for units 2 and 3. 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack, currently supported version that most closely matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
+## AI Usage and Acknowledgement
 
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
+Generative AI tools, including ChatGPT, were used as learning and development support during this project. They assisted with understanding Python concepts, troubleshooting coding issues, improving notebook documentation, structuring project explanations, and refining the presentation of findings.
+
+The analysis, interpretation of results, and final project decisions were reviewed by the author. AI-generated suggestions were checked against the dataset, code outputs, and analysis results before being incorporated into the project.
+
+AI was used as a support tool to enhance learning and productivity, rather than as a replacement for understanding the analytical process and evaluating the results.
+
+## References and Credits
+
+* **Dataset:** UCI Machine Learning Repository, *Insurance Company Benchmark (COIL 2000)*, Dataset ID 125. [Access the dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000).
+* **Licence:** Creative Commons Attribution 4.0 International (CC BY 4.0).
+* **Documentation:** The dataset description and data dictionary supplied with the dataset were used to understand the variables and their meanings.
