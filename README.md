@@ -114,19 +114,44 @@ Finally, I appreciate everyone who has contributed, directly or indirectly, to m
 
 ## References and Credits
 
-* **Dataset:** UCI Machine Learning Repository, *Insurance Company Benchmark (COIL 2000)*, Dataset ID 125. [Access the dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000).
+1. **UCI Machine Learning Repository — Insurance Company Benchmark (COIL 2000).** Dataset ID 125. Used as the primary data source for this project. [Access the dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000).
 
-* **Licence:** Creative Commons Attribution 4.0 International (CC BY 4.0).
+2. **Creative Commons — Attribution 4.0 International (CC BY 4.0).** Licence information associated with the dataset. [View the licence](https://creativecommons.org/licenses/by/4.0/).
 
-* **Documentation:** The dataset description and data dictionary supplied with the dataset were used to understand the variables and their meanings.
+3. **Documentation:** The dataset description and data dictionary supplied with the dataset were used to understand the variables and their meanings.
 
-* **AI and Writing Support Tools:**
+4. **Code Institute — Data Analytics with AI.** Course materials, learning resources and Capstone Project guidance. [Code Institute](https://codeinstitute.net/).
 
-  * [ChatGPT — OpenAI](https://chatgpt.com/): Used to clarify Python concepts, troubleshoot coding issues, improve notebook documentation and structure project explanations.
-  * [Gemini — Google](https://gemini.google.com/): Used as a learning support tool to help clarify concepts and explore approaches to project development.
-  * [QuillBot](https://quillbot.com/): Used to support proofreading, editing and improving the clarity of written content.
+5. **Python Software Foundation — Python Documentation.** Reference material for Python syntax, functions and programming concepts. [Python Documentation](https://docs.python.org/3/).
 
-  Suggestions from these tools were reviewed against the dataset, code outputs and analysis results before being incorporated into the project.
+6. **Pandas Documentation.** Used to support data loading, inspection, preparation and analysis. [Pandas Documentation](https://pandas.pydata.org/docs/).
+
+7. **NumPy Documentation.** Reference material for numerical computing and array operations. [NumPy Documentation](https://numpy.org/doc/stable/).
+
+8. **Matplotlib Documentation.** Used to support the creation and customisation of charts and visualisations. [Matplotlib Documentation](https://matplotlib.org/stable/).
+
+9. **Seaborn Documentation.** Reference material for statistical visualisation and exploring relationships in the data. [Seaborn Documentation](https://seaborn.pydata.org/).
+
+10. **Scikit-learn Documentation.** Used to support statistical and machine learning implementation, including Logistic Regression, StandardScaler, train-test splitting and classification evaluation. [Scikit-learn Documentation](https://scikit-learn.org/stable/).
+
+11. **Project Jupyter — Jupyter Notebook Documentation.** Reference material for developing, documenting and running the analysis in a notebook. [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/stable/).
+
+12. **Tableau — Tableau Public and Dashboard Documentation.** Used to support the creation and presentation of the interactive insurance customer analysis dashboard. [Tableau Public Resources](https://www.tableau.com/support/public) | [Creating dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_create.htm).
+
+13. **OpenAI — ChatGPT.** Used as a learning support tool to clarify Python concepts, troubleshoot code, improve notebook documentation and structure project explanations. [ChatGPT](https://chatgpt.com/).
+
+14. **Google — Gemini.** Used as a learning support tool to clarify concepts and explore approaches to project development. [Gemini](https://gemini.google.com/).
+
+15. **QuillBot.** Used to support proofreading, editing and improving the clarity and readability of written content. [QuillBot](https://quillbot.com/).
+
+16. **Author's Responsibility.** I reviewed the analysis, checked the outputs and interpreted the findings. I made the final decisions regarding the project's conclusions and recommendations. Suggestions from AI and writing support tools were reviewed before being incorporated into the project.
+
+- **AI and Writing Support Tools:**
+- [ChatGPT — OpenAI](https://chatgpt.com/): Used to clarify Python concepts, troubleshoot coding issues, improve notebook documentation and structure project explanations.
+- [Gemini — Google](https://gemini.google.com/): Used as a learning support tool to clarify concepts and explore approaches to project development.
+- [QuillBot](https://quillbot.com/): Used to support proofreading, editing and improving the clarity of written content.
+
+Suggestions from these tools were reviewed against the dataset, code outputs and analysis results before being incorporated into the project.
 
 * **Author's Responsibility:** I reviewed the analysis, interpreted the results and made the final decisions regarding the project's findings and recommendations.
 
