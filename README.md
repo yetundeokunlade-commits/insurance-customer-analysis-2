@@ -160,9 +160,9 @@ The dashboard presents selected associations and descriptive findings; the stati
 
 ## Unfixed Bugs
 
-At the time of submission, I will document any known unresolved technical bugs or limitations here.
+No known unresolved technical bugs remain at the time of submission.
 
-**If accurate after your final checks:** No known unresolved technical bugs remain. The main outstanding limitations are analytical, including class imbalance, the absence of a unique customer identifier and the need for further model validation.
+The project has some analytical limitations, including class imbalance in the target variable, the absence of a unique customer identifier and the need for further model validation. These limitations are discussed in the relevant sections of this README.
 
 ## Development Roadmap
 
