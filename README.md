@@ -106,7 +106,7 @@ My heartfelt appreciation goes to my husband and children for their love, patien
 
 I am sincerely grateful to my trainer and the entire Code Institute team for providing the training, resources and learning opportunities that have supported my development in data analytics.
 
-Special appreciation goes to my Learning Facilitator **[Emma Lamont]** and **[Idir Ouahes]** for their exceptional support, guidance, encouragement and willingness to help throughout my learning journey. Their contributions have helped strengthen my understanding, build my confidence and encourage me to keep progressing, even when learning new concepts has been challenging.
+Special appreciation goes to my Learning Facilitator Emma Lamont and Idir Ouahes for their exceptional support, guidance, encouragement and willingness to help throughout my learning journey. Their contributions have helped strengthen my understanding, build my confidence and encourage me to keep progressing, even when learning new concepts has been challenging.
 
 I also appreciate my colleagues for their shared experiences, encouragement, collaboration and support throughout the programme. Learning alongside them has been a valuable part of this journey.
 
