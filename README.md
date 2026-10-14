@@ -10,93 +10,220 @@ Explore my interactive Tableau dashboard presenting findings from the Insurance 
 
 ## Project Overview
 
-This project analyses the Insurance Company Benchmark (COIL 2000) dataset to explore customer characteristics and investigate factors associated with caravan insurance ownership. Exploratory data analysis, statistical testing, and machine learning are used to identify patterns and develop findings that can support insurance customer analysis and business decision-making.
+This project analyses the Insurance Company Benchmark (COIL 2000) dataset to explore customer characteristics and investigate factors associated with caravan insurance ownership. I used exploratory data analysis, statistical hypothesis testing and machine learning to identify patterns that may support customer segmentation and insurance business decision-making.
 
-## Objectives
+## Dataset Content
 
-* Load and inspect the UCI Insurance Company Benchmark (COIL 2000) dataset.
-* Clean and prepare the data for analysis.
-* Explore customer characteristics and insurance product ownership.
-* Investigate factors associated with caravan insurance ownership.
-* Apply statistical analysis and an appropriate machine learning model.
-* Present findings and recommendations to support business decision-making.
+The project uses the **Insurance Company Benchmark (COIL 2000)** dataset from the UCI Machine Learning Repository.
 
-## Dataset and Data Source
+- **Dataset ID:** 125
+- **Records:** 5,822
+- **Attributes:** 86
+- **Target variable:** `CARAVAN`
+- **Licence:** CC BY 4.0
+- **Source:** [UCI Machine Learning Repository — Insurance Company Benchmark (COIL 2000)](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000)
 
-The dataset used in this project is the **Insurance Company Benchmark (COIL 2000)** dataset, available through the UCI Machine Learning Repository.
+The main input files are:
 
-* **Dataset:** Insurance Company Benchmark (COIL 2000)
-* **Dataset ID:** 125
-* **Licence:** CC BY 4.0
-* **Dataset source:** [UCI Machine Learning Repository — Insurance Company Benchmark (COIL 2000)](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000)
+- `ticdata2000.txt` — the main dataset.
+- `ticdatadescr.txt` — the dataset description and data dictionary.
 
-The dataset was originally provided by Sentient Machine Research and is distributed through the UCI Machine Learning Repository.
+The target variable indicates whether a customer owns caravan insurance. The dataset contains coded customer characteristics, which I interpreted using the accompanying data dictionary.
 
-## Input Files
+## Business Requirements
 
-* `ticdata2000.txt` — the main dataset containing 5,822 records and 86 attributes.
-* `ticdatadescr.txt` — the dataset description and data dictionary.
+The project addresses the following business requirements:
 
-## Project Methodology
+1. Understand the characteristics of customers represented in the dataset.
+2. Investigate which customer-characteristic groups have different caravan insurance ownership rates.
+3. Use statistical tests to assess whether selected characteristics are associated with caravan insurance ownership.
+4. Develop and evaluate a classification model to explore the identification of potential caravan insurance customers.
+5. Present the findings through an interactive Tableau dashboard that is accessible to technical and non-technical audiences.
+6. Identify limitations and provide recommendations for further investigation.
 
-The project follows these main stages:
+## Hypotheses and How to Validate Them
 
-1. **Data preparation:** Loading, inspecting, and preparing the dataset for analysis.
-2. **Exploratory data analysis:** Examining customer characteristics and caravan insurance ownership patterns.
-3. **Statistical analysis:** Applying hypothesis tests to investigate associations between selected customer characteristics and caravan insurance ownership.
-4. **Machine learning:** Developing and evaluating a classification model to identify patterns associated with caravan insurance ownership.
-5. **Visualisation and reporting:** Preparing the analysis results for presentation in an interactive Tableau dashboard.
+I investigated whether selected customer characteristics were associated with caravan insurance ownership.
 
-## Project Outputs
+The hypotheses were:
 
-* Cleaned and prepared data for analysis.
-* Exploratory data analysis and visualisations.
-* Statistical analysis and hypothesis-testing results.
-* Machine learning model and evaluation results.
-* Findings, conclusions, and business recommendations.
-* An interactive Tableau Public dashboard.
+- **Age group:** There is an association between age group and caravan insurance ownership.
+- **Purchasing power:** There is an association between purchasing power group and caravan insurance ownership.
+- **Car ownership:** There is an association between car ownership percentage group and caravan insurance ownership.
+- **Household size:** There is an association between household size and caravan insurance ownership.
+- **Higher education:** There is an association between higher education percentage group and caravan insurance ownership.
+
+I used chi-square tests of independence to analyse these relationships. The null hypothesis for each test was that the selected characteristic and caravan insurance ownership were independent. I used a 5% significance level to interpret the p-values.
+
+The analysis found statistically significant associations for purchasing power, car ownership percentage group and higher education percentage group. The tests for age group and household size did not reach the 5% significance threshold.
+
+These results indicate associations in this dataset and they do not establish that any characteristic causes caravan insurance ownership.
+
+## Project Plan
+
+I organised the project into the following stages:
+
+1. **Data extraction:** Loaded the supplied dataset into a Jupyter Notebook using Python and Pandas.
+2. **Data inspection and preparation:** Examined the dataset structure, column names, data types and duplicate records, and prepared the data for analysis.
+3. **Exploratory data analysis:** Examined customer characteristics and the distribution of caravan insurance ownership.
+4. **Statistical analysis:** Used chi-square tests to investigate associations between selected characteristics and caravan insurance ownership.
+5. **Machine learning:** Prepared the data for classification, split it into training and testing sets, scaled the features and trained a Logistic Regression model.
+6. **Model evaluation:** Evaluated the model using classification metrics and ROC-AUC, paying attention to the minority class and false-positive predictions.
+7. **Visualisation:** Created a Tableau dashboard to communicate the distribution and selected customer-group findings.
+8. **Documentation and version control:** Documented the process, findings, limitations, references and AI usage in the README and maintained project files using Git and GitHub.
+
+I used Python for data preparation, statistical analysis and modelling and Tableau Public for interactive visualisation. This approach allowed me to investigate the data in detail before presenting selected findings in a dashboard.
+
+## Rationale for Mapping Business Requirements to Data Visualisations
+
+I selected four charts to help communicate the main findings.
+
+| Business question | Dashboard visualisation | Rationale |
+|---|---|---|
+| How does caravan insurance ownership vary across purchasing power groups? | Purchasing Power vs Caravan Insurance | Allows comparison of ownership rates across purchasing power groups. |
+| How does ownership vary across higher education percentage groups? | Higher Education Percentage Group vs Caravan Insurance | Helps show differences in ownership rates between education-related groups. |
+| How does ownership vary across car ownership percentage groups? | Car Ownership Percentage Group vs Caravan Insurance | Allows comparison of ownership rates across groups defined by car ownership percentage. |
+| How common is caravan insurance ownership in the dataset? | Caravan Insurance Distribution | Shows the proportion of customers with and without caravan insurance and makes the class imbalance visible. |
+
+These charts were selected to address the project questions directly and to make differences and the overall distribution easy to understand.
+
+## Analysis Techniques Used
+
+### Data preparation and exploratory analysis
+
+I used Pandas and NumPy to load, inspect and prepare the data. I explored the target variable and selected customer characteristics to understand the dataset before applying statistical tests and machine learning.
+
+I found 602 exact duplicate rows. As the dataset did not contain a unique customer identifier, I retained these records because identical characteristics do not prove that two records represent the same individual. This decision is a limitation because the dataset does not allow me to confirm the identity of duplicated records.
+
+### Statistical hypothesis testing
+
+I used chi-square tests of independence to investigate whether selected customer characteristics were associated with caravan insurance ownership.
+
+This method was suitable because the variables being compared were categorical or grouped into categories. However, the tests identify statistical associations rather than causation, and the results depend on the dataset and the assumptions of the test.
+
+### Machine learning
+
+I trained a Logistic Regression classifier to explore whether customer characteristics could help identify caravan insurance ownership.
+
+I used a stratified 80/20 training and testing split, feature scaling and class weighting to address the strong imbalance between customers with and without caravan insurance.
+
+The model achieved a ROC-AUC score of approximately **0.74**. It identified some caravan insurance customers, but it also produced a substantial number of false positives. The model should therefore be treated as an exploratory prototype, not as a production-ready system or a standalone basis for customer-targeting decisions.
+
+Possible alternatives for further investigation include comparing other classification algorithms, testing different decision thresholds, and evaluating resampling methods. Any alternative should be assessed using suitable metrics for the minority class and validated on appropriate data.
+
+### Use of generative AI
+
+I used ChatGPT and Google Gemini as learning support tools to clarify Python concepts, troubleshoot coding issues, understand analytical methods and improve project documentation. I used QuillBot to support proofreading and the clarity of written content.
+
+I reviewed AI suggestions, checked code outputs and made the final decisions about the analysis and its interpretation. Further details are provided in the AI Usage and Ethical Considerations sections.
 
 ## Key Findings
 
-The analysis identified differences in caravan insurance ownership across some customer-characteristic groups. Statistical testing found significant associations for selected variables, including purchasing power, car ownership percentage group, and higher education percentage group.
-
-The logistic regression model achieved a ROC-AUC score of approximately 0.74. The results also highlighted the challenge of identifying caravan insurance customers because they represent a relatively small proportion of the dataset.
-
-These findings can inform further investigation of customer groups, but the observed associations do not establish causation.
+- Caravan insurance ownership represents approximately **5.98%** of the dataset, compared with **94.02%** without caravan insurance.
+- Purchasing power, car ownership percentage group and higher education percentage group showed statistically significant associations with caravan insurance ownership.
+- The chi-square tests for age group and household size did not reach the 5% significance threshold.
+- The Logistic Regression model achieved a ROC-AUC score of approximately **0.74**.
+- The imbalance in the target variable and the number of false-positive predictions limit the model's suitability for real-world use without further evaluation.
 
 ## Business Recommendations
 
-* Investigate customer groups that showed higher caravan insurance ownership rates.
-* Use the findings to support further customer segmentation and targeted marketing research.
-* Consider the class imbalance when evaluating models designed to identify potential caravan insurance customers.
-* Validate the findings using additional data and business knowledge before making marketing or customer-targeting decisions.
+Based on the findings, I recommend that an insurance business:
 
-## Limitations
+- Investigate customer groups that showed higher caravan insurance ownership rates.
+- Use the results as a starting point for further customer segmentation and marketing research.
+- Avoid assuming that the identified characteristics cause customers to purchase caravan insurance.
+- Evaluate model performance carefully, particularly its ability to identify caravan insurance customers without generating too many false positives.
+- Validate the findings using additional data and business knowledge before making customer-targeting decisions.
 
-* Caravan insurance ownership represents a small proportion of the dataset, creating a class-imbalance challenge for machine learning.
-* The dataset does not contain a unique customer identifier.
-* Identical records were reviewed and retained because they may represent different customers with the same recorded characteristics.
-* The dataset contains coded customer characteristics, so the meaning of individual categories depends on the accompanying data dictionary.
-* Statistical associations and model predictions should not be interpreted as evidence of causation.
+## Ethical Considerations
 
-## Tools and Technologies
+I used a publicly available dataset from the UCI Machine Learning Repository. I considered responsible data use, privacy, fairness, transparency and the limitations of the analysis.
 
-* Python
-* Pandas and NumPy
-* Matplotlib and Seaborn
-* Scikit-learn
-* Jupyter Notebook
-* Tableau Desktop and Tableau Public
-* Git and GitHub
+The dataset contains coded customer characteristics, and I used the accompanying data dictionary to interpret them. I also recognised that the strong class imbalance may affect model performance and that false-positive predictions could lead to unsuitable marketing decisions if the model were used without further validation.
+
+I therefore treated the model as an exploratory prototype. Its predictions should not be used as the sole basis for real insurance decisions without further testing, validation and appropriate human oversight.
+
+## Dashboard Design
+
+The Tableau Public dashboard is titled **Insurance Customer Analysis**. Its subtitle explains that it explores customer characteristics and their relationship with caravan insurance ownership.
+
+The dashboard contains four visualisations:
+
+1. Purchasing Power vs Caravan Insurance
+2. Higher Education Percentage Group vs Caravan Insurance
+3. Car Ownership Percentage Group vs Caravan Insurance
+4. Caravan Insurance Distribution
+
+The dashboard focuses on clear comparisons and the overall distribution of caravan insurance ownership. It is intended to help viewers understand the main findings without needing to read the full analysis notebook.
+
+The dashboard presents selected associations and descriptive findings; the statistical tests and machine learning evaluation are documented in the project analysis.
+
+## Unfixed Bugs
+
+At the time of submission, I will document any known unresolved technical bugs or limitations here.
+
+**If accurate after your final checks:** No known unresolved technical bugs remain. The main outstanding limitations are analytical, including class imbalance, the absence of a unique customer identifier and the need for further model validation.
+
+## Development Roadmap
+
+Through this project, I developed my skills in data preparation, exploratory data analysis, statistical hypothesis testing, machine learning, visualisation and documentation.
+
+If I continue developing this project, I would:
+
+- Compare Logistic Regression with other classification approaches.
+- Investigate methods for improving minority-class identification while managing false positives.
+- Validate the model using additional data and suitable evaluation methods.
+- Explore further customer characteristics and assess whether additional visualisations would provide useful business insight.
+- Continue improving my Python, statistical analysis, machine learning and Tableau skills.
+
+## Deployment
+
+The interactive dashboard is published using Tableau Public.
+
+**Live dashboard:** [View the Interactive Tableau Dashboard](https://public.tableau.com/app/profile/yetunde.okunlade/viz/InsuranceCustomerAnalysis_17914587880850/InsuranceCustomerAnalysisDashboard)
+
+## Main Data Analysis Libraries
+
+- **Pandas:** Used to load, inspect, prepare and analyse the dataset.
+- **NumPy:** Used for numerical operations.
+- **Matplotlib:** Used to create charts during the analysis.
+- **Seaborn:** Used to explore and visualise statistical relationships.
+- **Scikit-learn:** Used for feature scaling, training and testing data preparation, Logistic Regression and model evaluation.
+- **Jupyter Notebook:** Used to organise the analysis into code cells, outputs and explanatory Markdown.
+- **Tableau Public:** Used to present the selected findings in an interactive dashboard.
+
+## References and Credits
+
+## References and Credits
+
+1. **UCI Machine Learning Repository – Insurance Company Benchmark (COIL 2000).** Primary data source. [View dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000)
+2. **Creative Commons – Attribution 4.0 International (CC BY 4.0).** [View licence information](https://creativecommons.org/licenses/by/4.0/)
+3. **Code Institute – Data Analytics with AI.** Course materials and capstone project guidance. [Visit Code Institute](https://codeinstitute.net/)
+4. **Python Software Foundation – Python Documentation.** [View documentation](https://docs.python.org/3/)
+5. **Pandas Documentation.** [View documentation](https://pandas.pydata.org/docs/)
+6. **NumPy Documentation.** [View documentation](https://numpy.org/doc/stable/)
+7. **Matplotlib Documentation.** [View documentation](https://matplotlib.org/stable/)
+8. **Seaborn Documentation.** [View documentation](https://seaborn.pydata.org/)
+9. **Scikit-learn Documentation.** [View documentation](https://scikit-learn.org/stable/)
+10. **Project Jupyter – Jupyter Notebook Documentation.** [View documentation](https://jupyter-notebook.readthedocs.io/en/stable/)
+11. **Tableau – Tableau Public and Dashboard Documentation.** [Tableau Public support](https://www.tableau.com/support/public) | [Creating dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_create.htm)
+12. **OpenAI – ChatGPT.** Used as a learning support tool. [Visit ChatGPT](https://chatgpt.com/)
+13. **Google – Gemini.** Used as a learning support tool. [Visit Gemini](https://gemini.google.com/)
+14. **QuillBot.** Used for proofreading and improving written clarity. [Visit QuillBot](https://quillbot.com/)
+
+## Credits, Content and Media
+
+- **Dataset:** The customer data used in this project was obtained from the UCI Machine Learning Repository. The dataset source and licence are listed in the References and Credits section.
+- **Analysis and code:** I carried out the data preparation, exploratory data analysis, statistical tests, machine learning experiments and interpretation as part of this project.
+- **Dashboard and visualisations:** I created the Tableau dashboard to present the findings from my analysis.
+- **Images and other media:** No external images or media were used in this project.
+- **AI and writing support:** My use of ChatGPT, Gemini and QuillBot is described in the AI Usage and Acknowledgement section.
 
 ## AI Usage and Acknowledgement
 
-Generative AI and writing support tools, including ChatGPT, Gemini and QuillBot, were used to support learning and project development. ChatGPT and Gemini assisted with clarifying Python concepts, troubleshooting coding issues, improving notebook documentation, structuring project explanations and understanding analytical methods. QuillBot was used to support proofreading, editing and improving the clarity of written content.
+I used ChatGPT and Google Gemini to clarify Python concepts, troubleshoot coding issues, understand analytical methods and improve the structure and clarity of my project documentation. QuillBot supported proofreading and editing.
 
-The author reviewed the analysis, interpreted the results and made the final decisions regarding the project's findings and recommendations. Suggestions generated by AI tools were checked against the dataset, code outputs and analysis results before being incorporated into the project.
-
-These tools were used to support learning, improve productivity and enhance the presentation of the project, rather than replace the author's understanding, critical thinking or evaluation of the analytical process and results.
-
+AI-generated suggestions were reviewed against the dataset, code outputs and analysis results before being incorporated into the project. I remain responsible for the code, analysis, interpretation, conclusions and recommendations presented in this repository.
 
 ## Acknowledgements
 
@@ -111,47 +238,6 @@ Special appreciation goes to my Learning Facilitator Emma Lamont and Idir Ouahes
 I also appreciate my colleagues for their shared experiences, encouragement, collaboration and support throughout the programme. Learning alongside them has been a valuable part of this journey.
 
 Finally, I appreciate everyone who has contributed, directly or indirectly, to my growth and progress. I am grateful for the opportunity to learn, develop new skills and take further steps towards my goal of becoming a data analyst.
-
-## References and Credits
-
-1. **UCI Machine Learning Repository — Insurance Company Benchmark (COIL 2000).** Dataset ID 125. Used as the primary data source for this project. [Access the dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000).
-
-2. **Creative Commons — Attribution 4.0 International (CC BY 4.0).** Licence information associated with the dataset. [View the licence](https://creativecommons.org/licenses/by/4.0/).
-
-3. **Documentation:** The dataset description and data dictionary supplied with the dataset were used to understand the variables and their meanings.
-
-4. **Code Institute — Data Analytics with AI.** Course materials, learning resources and Capstone Project guidance. [Code Institute](https://codeinstitute.net/).
-
-5. **Python Software Foundation — Python Documentation.** Reference material for Python syntax, functions and programming concepts. [Python Documentation](https://docs.python.org/3/).
-
-6. **Pandas Documentation.** Used to support data loading, inspection, preparation and analysis. [Pandas Documentation](https://pandas.pydata.org/docs/).
-
-7. **NumPy Documentation.** Reference material for numerical computing and array operations. [NumPy Documentation](https://numpy.org/doc/stable/).
-
-8. **Matplotlib Documentation.** Used to support the creation and customisation of charts and visualisations. [Matplotlib Documentation](https://matplotlib.org/stable/).
-
-9. **Seaborn Documentation.** Reference material for statistical visualisation and exploring relationships in the data. [Seaborn Documentation](https://seaborn.pydata.org/).
-
-10. **Scikit-learn Documentation.** Used to support statistical and machine learning implementation, including Logistic Regression, StandardScaler, train-test splitting and classification evaluation. [Scikit-learn Documentation](https://scikit-learn.org/stable/).
-
-11. **Project Jupyter — Jupyter Notebook Documentation.** Reference material for developing, documenting and running the analysis in a notebook. [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/stable/).
-
-12. **Tableau — Tableau Public and Dashboard Documentation.** Used to support the creation and presentation of the interactive insurance customer analysis dashboard. [Tableau Public Resources](https://www.tableau.com/support/public) | [Creating dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_create.htm).
-
-13. **OpenAI — ChatGPT.** Used as a learning support tool to clarify Python concepts, troubleshoot code, improve notebook documentation and structure project explanations. [ChatGPT](https://chatgpt.com/).
-
-14. **Google — Gemini.** Used as a learning support tool to clarify concepts and explore approaches to project development. [Gemini](https://gemini.google.com/).
-
-15. **QuillBot.** Used to support proofreading, editing and improving the clarity and readability of written content. [QuillBot](https://quillbot.com/).
-
-16. **Author's Responsibility.** I reviewed the analysis, checked the outputs and interpreted the findings. I made the final decisions regarding the project's conclusions and recommendations. Suggestions from AI and writing support tools were reviewed before being incorporated into the project.
-
-- **AI and Writing Support Tools:**
-- [ChatGPT — OpenAI](https://chatgpt.com/): Used to clarify Python concepts, troubleshoot coding issues, improve notebook documentation and structure project explanations.
-- [Gemini — Google](https://gemini.google.com/): Used as a learning support tool to clarify concepts and explore approaches to project development.
-- [QuillBot](https://quillbot.com/): Used to support proofreading, editing and improving the clarity of written content.
-
-Suggestions from these tools were reviewed against the dataset, code outputs and analysis results before being incorporated into the project.
 
 * **Author's Responsibility:** I reviewed the analysis, interpreted the results and made the final decisions regarding the project's findings and recommendations.
 
