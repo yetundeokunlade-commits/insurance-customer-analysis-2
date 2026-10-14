@@ -194,22 +194,19 @@ The interactive dashboard is published using Tableau Public.
 
 ## References and Credits
 
-## References and Credits
-
 1. **UCI Machine Learning Repository – Insurance Company Benchmark (COIL 2000).** Primary data source. [View dataset](https://archive.ics.uci.edu/dataset/125/insurance+company+benchmark+coil+2000)
-2. **Creative Commons – Attribution 4.0 International (CC BY 4.0).** [View licence information](https://creativecommons.org/licenses/by/4.0/)
-3. **Code Institute – Data Analytics with AI.** Course materials and capstone project guidance. [Visit Code Institute](https://codeinstitute.net/)
-4. **Python Software Foundation – Python Documentation.** [View documentation](https://docs.python.org/3/)
-5. **Pandas Documentation.** [View documentation](https://pandas.pydata.org/docs/)
-6. **NumPy Documentation.** [View documentation](https://numpy.org/doc/stable/)
-7. **Matplotlib Documentation.** [View documentation](https://matplotlib.org/stable/)
-8. **Seaborn Documentation.** [View documentation](https://seaborn.pydata.org/)
-9. **Scikit-learn Documentation.** [View documentation](https://scikit-learn.org/stable/)
-10. **Project Jupyter – Jupyter Notebook Documentation.** [View documentation](https://jupyter-notebook.readthedocs.io/en/stable/)
-11. **Tableau – Tableau Public and Dashboard Documentation.** [Tableau Public support](https://www.tableau.com/support/public) | [Creating dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_create.htm)
-12. **OpenAI – ChatGPT.** Used as a learning support tool. [Visit ChatGPT](https://chatgpt.com/)
-13. **Google – Gemini.** Used as a learning support tool. [Visit Gemini](https://gemini.google.com/)
-14. **QuillBot.** Used for proofreading and improving written clarity. [Visit QuillBot](https://quillbot.com/)
+2. **Code Institute – Data Analytics with AI.** Course materials and capstone project guidance. [Visit Code Institute](https://lms.codeinstitute.net/)
+3. **Python Software Foundation – Python Documentation.** [View documentation](https://docs.python.org/3/)
+4. **Pandas Documentation.** [View documentation](https://pandas.pydata.org/docs/)
+5. **NumPy Documentation.** [View documentation](https://numpy.org/doc/stable/)
+6. **Matplotlib Documentation.** [View documentation](https://matplotlib.org/stable/)
+7. **Seaborn Documentation.** [View documentation](https://seaborn.pydata.org/)
+8. **Scikit-learn Documentation.** [View documentation](https://scikit-learn.org/stable/)
+9. **Project Jupyter – Jupyter Notebook Documentation.** [View documentation](https://jupyter-notebook.readthedocs.io/en/stable/)
+10. **Tableau – Tableau Public and Dashboard Documentation.** [Tableau Public support](https://www.tableau.com/support/public) | [Creating dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_create.htm)
+11. **OpenAI – ChatGPT.** Used as a learning support tool. [Visit ChatGPT](https://chatgpt.com/)
+12. **Google – Gemini.** Used as a learning support tool. [Visit Gemini](https://gemini.google.com/)
+13. **QuillBot.** Used for proofreading and improving written clarity. [Visit QuillBot](https://quillbot.com/)
 
 ## Credits, Content and Media
 
@@ -235,7 +232,7 @@ I am sincerely grateful to my trainer and the entire Code Institute team for pro
 
 Special appreciation goes to my Learning Facilitator Emma Lamont and Idir Ouahes for their exceptional support, guidance, encouragement and willingness to help throughout my learning journey. Their contributions have helped strengthen my understanding, build my confidence and encourage me to keep progressing, even when learning new concepts has been challenging.
 
-I also appreciate my colleagues for their shared experiences, encouragement, collaboration and support throughout the programme. Learning alongside them has been a valuable part of this journey.
+I also appreciate my colleagues for their shared experiences, collaboration and support throughout the programme. Learning alongside them has been a valuable part of this journey.
 
 Finally, I appreciate everyone who has contributed, directly or indirectly, to my growth and progress. I am grateful for the opportunity to learn, develop new skills and take further steps towards my goal of becoming a data analyst.
 
